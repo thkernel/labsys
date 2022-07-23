@@ -1,0 +1,1 @@
+[#<Hl7Patient:0x00005572d318e818 @patient_id="18-10", @orders=[#<Hl7Order:0x00005572d318d940 @id="18-10", @priority=nil, @sequence_number=nil, @tests=nil, @specimen_type=nil, @date_time=nil, @action_code=nil, @results={"Total_B_hCG"=>#<Hl7Observation:0x00005572d3184ef8 @alternate_lis_codes=[], @name="Total_B_hCG", @report_name="Total_B_hCG", @value="< 5.00", @units="mIU/mL">}>]>]

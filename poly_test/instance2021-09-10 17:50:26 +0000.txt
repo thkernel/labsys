@@ -1,0 +1,1 @@
+[:@patients, :@queries, :@response_sent, :@protocol, :@message_type, :@message_control_id]

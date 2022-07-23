@@ -1,0 +1,1 @@
+[#<Hl7Patient:0x00005602187945d0 @orders=[#<Hl7Order:0x000056021878ae18 @id=nil, @priority=nil, @sequence_number=nil, @tests=nil, @specimen_type=nil, @date_time=nil, @action_code=nil, @results={""=>#<Hl7Observation:0x0000560218788f50 @alternate_lis_codes=[], @name="", @report_name="", @flags="N", @value="6.413608", @units="mg/L">}>]>]

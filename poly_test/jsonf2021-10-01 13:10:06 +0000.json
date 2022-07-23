@@ -1,0 +1,1 @@
+{"@patients":[{"orders":[{"id":null,"priority":null,"sequence_number":null,"tests":null,"specimen_type":null,"date_time":null,"action_code":null,"results":{"":{"alternate_lis_codes":[],"name":"","report_name":"","flags":"N","value":"4.157611","units":"mmol/L"}}}]}],"@queries":[],"@response_sent":false,"@protocol":"HL7","@message_type":"ORU","@message_control_id":"17"}
