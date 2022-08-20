@@ -1,0 +1,1 @@
+MSH|^~\&|BloodAnalysisSystem||LIS||20220820135107||ORM^O01|1|P|2.3.1|Import|||||UTF-8ORC|RF||1|SN|IP

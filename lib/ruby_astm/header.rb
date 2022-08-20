@@ -132,50 +132,51 @@ class Header
   	
   	puts "RESULT IN JSON: #{results}"
 
-	token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MjY0Mzk2NzcsImlzcyI6Imh0dHA6XC9cLzE5Mi4xNjguMTAwLjEwMFwvc2loX2hkYlwvYXBwXC9hcGlcLyIsImRhdGEiOnsiaWQiOiIxNTIiLCJmaXJzdG5hbWUiOiJDZXJ0ZXNfbGFibyIsImxhc3RuYW1lIjoiQ2VydGVzIiwibG9naW4iOiJjX2FkbWluIiwicGVybWlzc2lvbiI6InZpZXcubGFibyxsYWJfcGFyYW1ldHJhZ2UucmVzaCxsYWJfdHlwZV9hbmFseXNlLmxpc3RlLnJlc2gsbGFiX2FuYWx5c2UubGlzdGUucmVzaCxsYWJfcHJvdmVuYW5jZS5saXN0ZS5yZXNoIn19.gzMsLUfeHPPpRXfsA0tCofu4vAIl6btB0gnEoMvYooI"
-	bench_number = nil
-	new_results_hash = Hash.new
+	#token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MjY0Mzk2NzcsImlzcyI6Imh0dHA6XC9cLzE5Mi4xNjguMTAwLjEwMFwvc2loX2hkYlwvYXBwXC9hcGlcLyIsImRhdGEiOnsiaWQiOiIxNTIiLCJmaXJzdG5hbWUiOiJDZXJ0ZXNfbGFibyIsImxhc3RuYW1lIjoiQ2VydGVzIiwibG9naW4iOiJjX2FkbWluIiwicGVybWlzc2lvbiI6InZpZXcubGFibyxsYWJfcGFyYW1ldHJhZ2UucmVzaCxsYWJfdHlwZV9hbmFseXNlLmxpc3RlLnJlc2gsbGFiX2FuYWx5c2UubGlzdGUucmVzaCxsYWJfcHJvdmVuYW5jZS5saXN0ZS5yZXNoIn19.gzMsLUfeHPPpRXfsA0tCofu4vAIl6btB0gnEoMvYooI"
+	#bench_number = nil
+	#new_results_hash = Hash.new
 
-	patients = results["@patients"]
-	puts "ORDERS: #{patients}"
+	#patients = results["@patients"]
+	#puts "ORDERS: #{patients}"
 
-	patients.each do |patient|
+	#patients.each do |patient|
 		#puts "PATIENT: #{patient}"
-		orders = patient["orders"]
+		#orders = patient["orders"]
 		
-		puts "ORDERS: #{orders}"
+		#puts "ORDERS: #{orders}"
 
-		orders.each do  |order|
-			bench_number = order["id"]
+		#orders.each do  |order|
+			#bench_number = order["id"]
 
-			results = order["results"]
-			key = results.keys[0]
-			analyse = results.values[0]
-			puts "RESULTS KEY: #{key}"
-			puts "RESULTS VALUE: #{analyse}"
-			new_results_hash[key] = {value: analyse["value"], um: analyse["units"]}
-		end
+			#results = order["results"]
+			#key = results.keys[0]
+			#analyse = results.values[0]
+			#puts "RESULTS KEY: #{key}"
+			#puts "RESULTS VALUE: #{analyse}"
+			#new_results_hash[key] = {value: analyse["value"], um: analyse["units"]}
+		#end
 
-	end
+	#end
 
-	final_results_hash = Hash.new 
-	final_results_hash["token"] = token
-	final_results_hash["bench_number"] = bench_number
-	final_results_hash["automate_name"] = ""
-    final_results_hash["automate_ip"] =  ""
-	final_results_hash["analyzes"] = new_results_hash
-	puts "NEW RESULTS HASH: #{final_results_hash}"
+	#final_results_hash = Hash.new 
+	#final_results_hash["token"] = token
+	#final_results_hash["bench_number"] = bench_number
+	#final_results_hash["automate_name"] = ""
+    #final_results_hash["automate_ip"] =  ""
+	#final_results_hash["analyzes"] = new_results_hash
+	#puts "NEW RESULTS HASH: #{final_results_hash}"
 	
-	puts "NEW RESULTS HASH TO: #{final_results_hash.to_json}"
+	#puts "NEW RESULTS HASH TO: #{final_results_hash.to_json}"
 	# Send data to SIH
-	send_results(final_results_hash)
+	#send_results(final_results_hash)
+	send_results(results)
 	
 
 end
 
 	def send_results(results)
-		#uri = "http://apps.certesmali.org/sih/app/api/labo/save/" online api
-		uri = URI('http://192.168.1.11/pg_test/app/api/labo/save/') #local
+		
+		uri = URI('http://192.168.1.117:8080/labo/api/results') #local
 		puts "URI: #{uri}"
 	    http = Net::HTTP.new(uri.host, uri.port)
 	    req = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
