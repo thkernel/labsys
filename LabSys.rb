@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 #require "ruby_astm"
 #require_relative 'lib/ruby_astm/astm_server'
 require_relative 'lib/ruby_astm'
@@ -15,6 +16,7 @@ end
 
 
 test
+
 
 
 

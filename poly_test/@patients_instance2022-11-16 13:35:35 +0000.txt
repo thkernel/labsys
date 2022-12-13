@@ -1,0 +1,1 @@
+[#<Patient:0x000056278a861818 @sequence_number=45, @patient_id=nil, @orders=[#<Order:0x000056278a854280 @priority=nil, @sequence_number=nil, @tests=nil, @specimen_type=nil, @date_time=nil, @action_code=nil, @results={}>]>]

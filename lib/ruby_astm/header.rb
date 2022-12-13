@@ -111,7 +111,7 @@ class Header
             current_instance_var ||= File.join root,'../poly_test',"#{x}_instance#{Time.now}.txt"
             IO.write(current_instance_var, self.instance_variable_get(x) )
         end
-        #IO.write(jsonf, hash.to_json )
+        IO.write(jsonf, hash.to_json )
 
         # Process and send results to SIH
         process_results(JSON.parse(hash.to_json))
